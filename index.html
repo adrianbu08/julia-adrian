@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adrian Buda + Julia Dudek</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Adrian Buda</h1>
+        <h1>Julia Dudek</h1>
+        <p class="count">Dni razem: <span id="day-count"></span></p>
+    </div>
+
+    <script>
+        function updateDayCount() {
+            const startDate = new Date('2024-05-10');
+            const currentDate = new Date();
+            const timeDifference = currentDate - startDate;
+            const dayCount = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            document.getElementById('day-count').textContent = dayCount;
+        }
+
+        updateDayCount();
+        setInterval(updateDayCount, 1000 * 60 * 60); // Update every hour
+    </script>
+</body>
+</html>
